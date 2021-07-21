@@ -61,7 +61,8 @@
     width: 398px;
     height: 509px;
     padding: 10px 25px;
-    margin: 10vh auto;
+    
+    margin-top: 3rem;
     background: #F2F2F2;
     border-radius: 30px;
     border: 1px solid rgb(148, 143, 143);
@@ -113,12 +114,12 @@
   .user, .pass{ background:#E0E0E0; }
   
   .login{
-      margin-left: 6.3rem;
-      width:35%;
+    margin-left: 6.3rem;
+    width:35%;
     color: #fff;
     cursor: pointer;
     margin-top: -0.3rem;
-    background: #3598dc;
+    background: #1D69C4;
     transition: background 0.4s ease;
     height:45px;
     font-size: 20px;
