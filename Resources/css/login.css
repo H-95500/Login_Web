@@ -14,7 +14,6 @@
   line-height: 2.1rem;
 }
 
-/* Nav bar */
 .top-nav .container-fluid {
   overflow: hidden;
   background-color: white;
@@ -52,7 +51,6 @@ body {
   background-image: url(Background.jpg);
 }
 
-/* Form */
 .cont {
   position: relative;
   width: 398px;
