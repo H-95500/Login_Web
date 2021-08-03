@@ -1,32 +1,75 @@
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
 
 :root{
     --succes-color: #2ecc71;;
     --error-color: #e74c3c;
 }
 
-
 *{
-    box-sizing: border-box;
-}
-
-body{
-
-    background-color: #f9fafb;
-    font-family: 'Open Sans', sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
     margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family:sans-serif;
+  }
+  
+  body{ 
+    background-image:url(Background.jpg);
+  }
+
+  /* Above Header */
+  .header-container {
+    .container-fluid{
+        height: 2.2rem;
+        padding-bottom: 1.2rem;
+        background-color: #1D69C4;
+    }
+  p {
+      color: white;
+      float: right;
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding-right: 1.3rem;
+      line-height: 2.1rem;
+  }
+   }
+
+   .top-nav {
+    .container-fluid{
+    overflow: hidden;
+    background-color:white;
+    border: 1px solid rgb(143, 137, 137);
+    height: 80px;
+    width:100%;
+    margin-bottom: 3rem;
+    img{
+        padding-top: 0.8rem;
+        padding-left: 1.5rem;
+        width:8rem;
+        padding-bottom: 0.5rem;
+     }
+
+     p{
+         float:right;
+         padding-top: 1.4rem;
+         padding-right: 38rem;
+         font-size: 1.4rem;
+         font-weight: 800;
+         color:#3598dc;
+     }
+     
+  }
 }
 
-.container{
+
+
+.registration{
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     width: 400px;
+
 }
 
 h2{
@@ -98,3 +141,30 @@ h2{
     width:100%;
 }
  
+.footer {
+    height: 5rem;
+    width: auto;
+    border: 1px solid gray;
+    margin-top: 4rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    background-color: #BDBDBD;
+    .footer-left {
+        color: black;
+        font-size: 0.9rem;
+    }
+    .footer-right {
+        float: right;
+        .span1,
+        .span2,
+        .span3 {
+            border-bottom: 1px solid black;
+            color:black;
+            margin: 2rem;
+            font-size: 0.9rem;
+        }
+    }
+  }
+  
