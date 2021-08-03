@@ -6,6 +6,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="Resources/css/login.css">
+  <script>$(document).scroll(function() {
+    navbarScroll();
+  });
+  
+  function navbarScroll() {
+    var y = window.scrollY;
+    if (y > 10) {
+      $('.header').addClass('small');
+    } else if (y < 10) {
+      $('.header').removeClass('small');
+    }
+  }
+  </script>
 </head>
 
 <body>
