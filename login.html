@@ -2,155 +2,76 @@
 <html lang="en">
 
 <head>
-  <title>Search</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="Resources/css/login.css">
-  <link href='https://fonts.googleapis.com/css?family=Montserrat|Cardo' rel='stylesheet' type='text/css'>
-
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
-<script>
-const form = document.getElementById('form');
-const username = document.getElementById('username');
-const email = document.getElementById('email');
-const password = document.getElementById('password');
-const password2 = document.getElementById('password2');
-
-//Show input error messages
-function showError(input, message) {
-    const formControl = input.parentElement;
-    formControl.className = 'form-control error';
-    const small = formControl.querySelector('small');
-    small.innerText = message;
-}
-
-//show success colour
-function showSucces(input) {
-    const formControl = input.parentElement;
-    formControl.className = 'form-control success';
-}
-
-//check email is valid
-function checkEmail(input) {
-    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if(re.test(input.value.trim())) {
-        showSucces(input)
-    }else {
-        showError(input,'Email is not invalid');
-    }
-}
-
-
-//checkRequired fields
-function checkRequired(inputArr) {
-    inputArr.forEach(function(input){
-        if(input.value.trim() === ''){
-            showError(input,`${getFieldName(input)} is required`)
-        }else {
-            showSucces(input);
-        }
-    });
-}
-
-
-//check input Length
-function checkLength(input, min ,max) {
-    if(input.value.length < min) {
-        showError(input, `${getFieldName(input)} must be at least ${min} characters`);
-    }else if(input.value.length > max) {
-        showError(input, `${getFieldName(input)} must be les than ${max} characters`);
-    }else {
-        showSucces(input);
-    }
-}
-
-//get FieldName
-function getFieldName(input) {
-    return input.id.charAt(0).toUpperCase() + input.id.slice(1);
-}
-
-// check passwords match
-function checkPasswordMatch(input1, input2) {
-    if(input1.value !== input2.value) {
-        showError(input2, 'Passwords do not match');
-    }
-}
-
-
-//Event Listeners
-form.addEventListener('submit',function(e) {
-    e.preventDefault();
-
-    checkRequired([username, email, password, password2]);
-    checkLength(username,3,15);
-    checkLength(password,6,25);
-    checkEmail(email);
-    checkPasswordMatch(password, password2);
-});
-  </script>
+    <title>Search</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="Resources/css/login.css">
 </head>
 
 <body>
-  <!--Above Header-->
-  <div class="header-container">
-    <div class="container-fluid">
-      <p class="userlogo">CONTACT US | WORLD WIDE</p>
+    <!--Above Header-->
+    <div class="header-container">
+        <div class="container-fluid">
+            <p class="userlogo">CONTACT US | WORLD WIDE</p>
+        </div>
     </div>
-  </div>
-  <div class="top-nav">
-    <div class="container-fluid">
-      <img src="Resources/images/aig-insurance.svg" alt="AIG logo">
-      <p class="title_login">GENERATION 5 EXTENDED WARRANTY SYSTEM</p>
+    <div class="top-nav">
+        <div class="container-fluid">
+            <img src="Resources/images/aig-insurance.svg" alt="AIG logo">
+            <p class="title_login">GENERATION 5 EXTENDED WARRANTY SYSTEM</p>
+        </div>
     </div>
-  </div>
-  <!--<style type="text/css">
+    <!--<style type="text/css">
       #picture {
           background-image:url(Background.jpg)
       }
     </style>
     <div id="picture"> -->
-  <!--Main Screen-->
-  <div class="registration">
-  <div class="container">
-  
-    <form id="form" class="form">
-        <h2>Register With Us</h2>
-        <div class="form-control">
-            <label for="username">Username</label>
-            <input type="text" id="username" placeholder="Enter Username">
-            <small>Error Message</small>
+    <!--Main Screen-->
+    <div class="registration">
+        <div class="container">
+
+            <form id="form" class="form">
+                <h2>Register With Us</h2>
+                <div class="form-control">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter Username">
+                    <small>Error Message</small>
+                </div>
+                <div class="form-control">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" placeholder="Enter email">
+                    <small>Error Message</small>
+                </div>
+                <div class="form-control">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter password">
+                    <small>Error Message</small>
+                </div>
+                <div class="form-control">
+                    <label for="password2">Confirm Password</label>
+                    <input type="password" id="password2" placeholder="Enter password again">
+                    <small>Error Message</small>
+                </div>
+                <button id="submit">Submit</button>
+            </form>
         </div>
-        <div class="form-control">
-            <label for="email">Email</label>
-            <input type="text" id="email" placeholder="Enter email">
-            <small>Error Message</small>
+    </div>
+    <footer>
+        <div class="footer">
+            <div class="footer-left">
+                <span><br>
+                    @2012 American International Group, Inc.
+                    All Rights Reserved.</span>
+            </div>
+            <div class="footer-right">
+                <span class="span1"> Terms of Use </span>
+                <span class="span2"> Legal Notice </span><br><br>
+                <span class="span3"> Privacy </span>
+            </div>
         </div>
-        <div class="form-control">
-            <label for="password">Password</label>
-            <input type="password" id="password" placeholder="Enter password">
-            <small>Error Message</small>
-        </div>
-        <div class="form-control">
-            <label for="password2">Confirm Password</label>
-            <input type="password" id="password2" placeholder="Enter password again">
-            <small>Error Message</small>
-        </div>
-        <button>Submit</button>
-    </form>
-</div>
-</div>
-<footer>
-  <div class="footer">
-      <div class="footer-left">
-          <span><br>
-              @2012 American International Group, Inc.
-              All Rights Reserved.</span>
-      </div>
-      <div class="footer-right">
-          <span class="span1"> Terms of Use </span>
-          <span class="span2"> Legal Notice </span><br><br>
-          <span class="span3"> Privacy </span>
-      </div>
-  </div>
-</footer>
+    </footer>
+    <script src="./login.js"></script>
 </body>
+
+</html>
